@@ -12,7 +12,7 @@ As seguintes ferramentas foram usadas na construção do projeto:
 - [DataBase](https://archive.ics.uci.edu/ml/datasets/default+of+credit+card+clients)
 
 ## **🛠 Pré-requisitos**
-Necessário possuir o R instalado.
+Necessário possuir o R instalado. <br />
 Não é necessário possuir uma IDE, é possível executar via console.
 
 ## **🛠 Autor**
