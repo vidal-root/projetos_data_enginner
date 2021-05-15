@@ -30,6 +30,7 @@ summary(data_set_cred_clients)
 
 # --------------------------------------- Tratamento dos dados --------------------------------------- 
 # Update Registro
+
 data_set_cred_clients <- update_value_column(data_set_cred_clients, 'SEX', "1", "Masculino")
 data_set_cred_clients <- update_value_column(data_set_cred_clients, 'SEX', "2", "Feminino")
 data_set_cred_clients <- update_value_column(data_set_cred_clients, 'EDUCATION', "1", "Pós-graduação")
@@ -40,7 +41,9 @@ data_set_cred_clients <- update_value_column(data_set_cred_clients, 'MARRIAGE', 
 data_set_cred_clients <- update_value_column(data_set_cred_clients, 'MARRIAGE', "2", "Solteiro")
 data_set_cred_clients <- update_value_column(data_set_cred_clients, 'MARRIAGE', "3", "Outros")
 
-total_substituir <- c('Sem informação','Pagamento em dia', 'Sem informação', 'Atraso no pagamento por um mês', 'Atraso no pagamento por dois', 'Atraso no pagamento por três meses',
+View(data_set_cred_clients)
+
+total_substituir <- c('Sem informação','Pagamento em dia', 'Sem informação', 'Atraso no pagamento por um mês', 'Atraso no pagamento por dois meses', 'Atraso no pagamento por três meses',
                        'Atraso no pagamento por quatro meses', 'Atraso no pagamento por cinco meses', 'Atraso no pagamento por seis meses', 
                        'Atraso no pagamento por sete meses', 'Atraso no pagamento por oito meses', 'Atraso no pagamento por nove meses ou mais')
 
