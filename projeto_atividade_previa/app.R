@@ -30,7 +30,6 @@ summary(data_set_cred_clients)
 
 # --------------------------------------- Tratamento dos dados --------------------------------------- 
 # Update Registro
-
 data_set_cred_clients <- update_value_column(data_set_cred_clients, 'SEX', "1", "Masculino")
 data_set_cred_clients <- update_value_column(data_set_cred_clients, 'SEX', "2", "Feminino")
 data_set_cred_clients <- update_value_column(data_set_cred_clients, 'EDUCATION', "1", "Pós-graduação")
@@ -47,7 +46,7 @@ total_substituir <- c('Sem informação','Pagamento em dia', 'Sem informação', 'At
 
 i = -2;
 
-for (value in total_subistituir) {
+for (value in total_substituir) {
   
   total_tables <- c(0:6)
   
