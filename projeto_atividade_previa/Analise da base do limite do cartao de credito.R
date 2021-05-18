@@ -1,10 +1,27 @@
 library(readxl)
 library(mice)
+library(httr)
+library(jsonlite)
 
-cartao_credito <- data.frame(read_excel("D:/Estudos/MBA - Engenharia de Dados/CPD - Coleta e Preparação de Dados/Trabalho Pratico/default of credit card clients.xls",col_names = TRUE, skip = 1))
+setwd("C:/Users/vidal_root/Documents/Estudo/MBA - Data Enginner/Coleta e Preparação dos Dados/Atividades/projeto_atividade_previa")
+
+source(file = 'functions.R')
+
+cartao_credito <- data.frame(read_excel("default of credit card clients.xls",col_names = TRUE, skip = 1))
 
 #Verificando dados ausentes na base geral
 md.pattern(cartao_credito)
+
+#excluir colunas
+View(cartao_credito)
+idx_colunm_excluir <- c(7:24)
+cartao_credito <- cartao_credito[,-idx_colunm_excluir]
+View(cartao_credito)
+
+#conversão para real
+nr_dollar = as.numeric(get_nr_dolar())
+cartao_credito$LIMIT_BAL <- cartao_credito$LIMIT_BAL * nr_dollar
+View(cartao_credito)
 
 #separa dados de analise
 analise <- data.frame(
@@ -94,3 +111,5 @@ summary(analise_sem_ausentes)
 boxplot(analise$LIMITE)
 
 head(analise)
+
+
